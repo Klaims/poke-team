@@ -1,0 +1,14 @@
+#selected {
+
+    height: 350px;
+    padding: 20px 10px;
+    margin: 0 0 40px 0;
+    background-color: rgb(240,240,240);
+    border-radius: 10px;
+}
+
+#types .col-md {
+
+    display: flex;
+    justify-content: center
+}

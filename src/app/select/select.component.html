@@ -1,0 +1,22 @@
+<div class="container d-flex flex-column align-items-center">
+
+    <h1>Choisissez un pokémon</h1>
+
+    <app-selected [pokemon]="selected"></app-selected>
+
+    <form class="container d-flex flex-column align-items-center justify-content-around" #f="ngForm">
+
+        <input type="text" id="nameFr" name="nameFr" class="form-control w-50" list="poke-list" (ngModelChange)="selectPokemon(f)"required ngModel>
+        <span class="text-danger" *ngIf="!valid">Nom de pokémon non valide</span>
+        <datalist id="poke-list">
+            <option *ngFor="let poke of frenchPokemon"> {{ poke }} </option>
+        </datalist>
+
+        <div class="w-100 d-flex flex-row justify-content-around btns flex-wrap">
+            <button class="btn btn-outline-success" (click)="submitPokemon(f)" [disabled]="!valid || !selected"> Choisir ce pokémon </button>
+            <button class="btn btn-outline-danger" (click)="goBack()" > Annuler </button>
+        </div>
+
+    </form>
+
+</div>
